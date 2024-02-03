@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
 
-static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
-static int centered = 0;                    /* -c  option; if 1, dmenu appears at center     */
-static int min_width = 500;                 /* minimum width when centered                   */
-static const unsigned int alpha = 0xff;     /* Amount of opacity. 0xff is opaque             */
+static int topbar = 0;                      /* -b  option; if 0, dmenu appears at bottom     */
+static int centered = 1;                    /* -c  option; if 1, dmenu appears at center     */
+static int min_width = 1000;                /* minimum width when centered                   */
+static const unsigned int alpha = 0xee;     /* Amount of opacity. 0xff is opaque             */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-	"monospace:size=10"
+	"monospace:size=30"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
