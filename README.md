@@ -7,3 +7,4 @@
 - case insensitive
 - center
 - mouse support
+- password
