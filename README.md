@@ -6,5 +6,7 @@
 - bar height
 - case insensitive
 - center
+- grid
+- gridnav
 - mouse support
 - password
