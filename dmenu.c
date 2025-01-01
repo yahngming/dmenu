@@ -731,7 +731,6 @@ mousemove(XEvent *e)
 	int x = 0, y = 0, h = bh, w, item_num = 0;
 
 	if (lines > 0) {
-		/* vertical list: (ctrl)left-click on item */
 		w = mw - x;
 		for (item = curr; item != next; item = item->right) {
 			if (item_num++ == lines){
@@ -742,53 +741,24 @@ mousemove(XEvent *e)
 			y += h;
 			if (ev->y >= y && ev->y <= (y + h) &&
 			    ev->x >= x && ev->x <= (x + w / columns)) {
-				puts(item->text);
-				if (!(ev->state & ControlMask))
-					exit(0);
 				sel = item;
-				if (sel) {
-					sel->out = 1;
-					drawmenu();
-				}
-				return;
-			}
-		}
-	} else if (matches) {
-		/* left-click on left arrow */
-		x += inputw;
-		w = TEXTW("<");
-		if (prev && curr->left) {
-			if (ev->x >= x && ev->x <= x + w) {
-				sel = curr = prev;
 				calcoffsets();
 				drawmenu();
 				return;
 			}
 		}
-		/* horizontal list: (ctrl)left-click on item */
+	} else if (matches) {
+		x += inputw + promptw;
+		w = TEXTW("<");
 		for (item = curr; item != next; item = item->right) {
 			x += w;
 			w = MIN(TEXTW(item->text), mw - x - TEXTW(">"));
 			if (ev->x >= x && ev->x <= x + w) {
-				puts(item->text);
-				if (!(ev->state & ControlMask))
-					exit(0);
 				sel = item;
-				if (sel) {
-					sel->out = 1;
-					drawmenu();
-				}
+				calcoffsets();
+				drawmenu();
 				return;
 			}
-		}
-		/* left-click on right arrow */
-		w = TEXTW(">");
-		x = mw - w;
-		if (next && ev->x >= x && ev->x <= x + w) {
-			sel = curr = next;
-			calcoffsets();
-			drawmenu();
-			return;
 		}
 	}
 }
