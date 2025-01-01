@@ -739,16 +739,10 @@ mousemove(XEvent *e)
 				y = 0;
 			}
 			y += h;
-			if (ev->y >= y && ev->y <= (y + h) &&
-			    ev->x >= x && ev->x <= (x + w / columns)) {
-				puts(item->text);
-				if (!(ev->state & ControlMask))
-					exit(0);
+			if (ev->y >= y && ev->y <= (y + h)) {
 				sel = item;
-				if (sel) {
-					sel->out = 1;
-					drawmenu();
-				}
+				calcoffsets();
+				drawmenu();
 				return;
 			}
 		}
