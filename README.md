@@ -8,5 +8,7 @@
 - center
 - grid
 - gridnav
+- lines below prompt
 - mouse support
+- no input
 - password
