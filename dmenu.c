@@ -624,9 +624,6 @@ buttonpress(XEvent *e)
 	if (ev->button == Button3)
 		exit(1);
 
-	if (prompt && *prompt)
-		x += promptw;
-
 	/* input field */
 	w = (lines > 0 || !matches) ? mw - x : inputw;
 
@@ -668,7 +665,7 @@ buttonpress(XEvent *e)
 		return;
 	if (lines > 0) {
 		/* vertical list: (ctrl)left-click on item */
-		w = mw;
+		w = mw - x;
 		for (item = curr; item != next; item = item->right) {
 			if (item_num++ == lines){
 				item_num = 1;
