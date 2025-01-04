@@ -205,7 +205,7 @@ drawmenu(void)
 				item,
 				(x + ((i / lines) *  ((mw - x) / columns))) - promptw,
 				y + (((i % lines) + 1) * bh),
-				(mw - x) / columns
+				mw / columns
 			);
 	} else if (matches) {
 		/* draw horizontal list */
