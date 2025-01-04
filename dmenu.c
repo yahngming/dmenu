@@ -203,7 +203,7 @@ drawmenu(void)
 		for (item = curr; item != next; item = item->right, i++)
 			drawitem(
 				item,
-				(!draw_input && prompt && *prompt) ? (x + ((i / lines) *  ((mw - x) / columns))) - promptw : (x + ((i / lines) *  ((mw - x) / columns))) - promptw,
+				(!draw_input && prompt && *prompt) ? (x + ((i / lines) *  ((mw - x) / columns))) - mw : (x + ((i / lines) *  ((mw - x) / columns))) - promptw,
 				y + (((i % lines) + 1) * bh),
 				(mw - x) / columns
 			);
@@ -214,8 +214,8 @@ drawmenu(void)
 		if (curr->left) {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, "<", 0);
-			x += w;
 		}
+		x += w;
 		for (item = curr; item != next; item = item->right)
 			x = drawitem(item, x, 0, textw_clamp(item->text, mw - x - TEXTW(">")));
 		if (next) {
