@@ -665,7 +665,7 @@ buttonpress(XEvent *e)
 		return;
 	if (lines > 0) {
 		/* vertical list: (ctrl)left-click on item */
-		w = mw - x;
+		w = mw;
 		for (item = curr; item != next; item = item->right) {
 			if (item_num++ == lines){
 				item_num = 1;
