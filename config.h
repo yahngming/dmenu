@@ -6,7 +6,7 @@ static int centered = 1;                    /* -c  option; if 1, dmenu appears a
 static int draw_input = 1;                  /* -noi option; if 0, the input will not be drawn by default */
 static int min_width = 1024;                /* minimum width when centered                   */
 static const int barspacing = 16;           /* spacing between bar and fonts                 */
-static const unsigned int alpha = 0xdd;     /* Amount of opacity. 0xff is opaque             */
+static const unsigned int alpha = 0xee;     /* Amount of opacity. 0xff is opaque             */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
 	"monospace:size=32"
