@@ -9,7 +9,7 @@ static const int barspacing = 16;           /* spacing between bar and fonts    
 static const unsigned int alpha = 0xee;     /* Amount of opacity. 0xff is opaque             */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-	"monospace:size=32"
+	"terminal:size=16"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
