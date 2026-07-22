@@ -12,3 +12,4 @@
 - mousesupport
 - noinput
 - password
+- xresources
