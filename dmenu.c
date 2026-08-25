@@ -666,7 +666,7 @@ buttonpress(XEvent *e)
 	}
 	if (ev->button != Button1)
 		return;
-	if (ev->state & ~ControlMask)
+	if (ev->state & (Mod1Mask | Mod4Mask))
 		return;
 	if (lines > 0) {
 		/* vertical list: (ctrl)left-click on item */
