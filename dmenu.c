@@ -212,7 +212,7 @@ drawmenu(void)
 				y + (((i % lines) + 1) * bh),
 				mw / columns
 			);
-	} else if (matches) {
+	} else if (matches && curr) {
 		/* draw horizontal list */
 		x += inputw;
 		w = TEXTW("<");
